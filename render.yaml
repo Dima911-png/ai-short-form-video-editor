@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: ai-short-form-video-editor
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: AIVE_DATA_DIR
+        value: /tmp/aive-data
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: PEXELS_API_KEY
+        sync: false
