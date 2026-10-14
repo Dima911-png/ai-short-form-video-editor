@@ -23,7 +23,7 @@ def transcribe(project_id: str, assetId: str, language: str | None = None):
     except RuntimeError as e:
         raise HTTPException(500, f"Transcription failed: {e}")
     except Exception as e:
-        raise HTTPException(502, f"Groq transcription call failed: {e}")
+        raise HTTPException(502, f"Local transcription failed: {e}")
 
     transcript = {"assetId": assetId, "words": words}
     project["transcript"] = transcript
